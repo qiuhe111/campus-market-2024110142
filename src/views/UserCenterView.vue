@@ -3,8 +3,8 @@
 
 <template>
   <div class="page">
-    <h1>消息页面</h1>
-    <p class="desc">查看私信、系统通知和互动消息，与同学们保持联系</p>
+    <h1>个人中心</h1>
+    <p class="desc">管理个人资料、查看我的发布、收藏和交易记录</p>
   </div>
 </template>
 
