@@ -1,111 +1,50 @@
-# Day2 Evidence
+# Day2 Evidence - 页面骨架与路由导航
 
-- **日期**: 2026-06-28
-- **主要任务**: 项目结构重构、首页改版、功能详情页创建、布局组件封装
+## 1. 今日完成内容
 
----
+今天完成了"校园轻集市"项目的页面骨架搭建和路由导航配置。首先重构了项目结构，将原有的零散页面文件整合到 `src/views/` 目录下，清理了不再使用的旧页面（ListView、DetailView、BoardView、ProfileView）。然后利用 Vue Router 定义了 8 个核心业务路由，并为每个路由绑定对应的页面组件。同时创建了可复用的公共布局组件体系，包括 AppLayout（整体布局容器）、AppHeader（头部品牌区）和 AppNav（导航菜单），使所有页面共享统一的视觉框架和导航能力。最后对首页进行了改版，设计为带 Hero 区域和四大功能卡片的介绍页，四个核心功能页面也分别补充了使用指南和温馨提示板块。
 
-## 今日完成内容
+## 2. 页面与路由清单
 
-1. **项目结构重构**
-   - 按照建议结构重组 `src/views/`，保留 8 个页面级组件：
-     `HomeView`、`TradeView`、`LostFoundView`、`GroupBuyView`、`ErrandView`、`PublishView`、`MessageView`、`UserCenterView`
-   - 创建 `src/components/` 可复用布局组件：`AppHeader.vue`、`AppNav.vue`、`AppLayout.vue`
-   - 创建 `src/assets/` 静态资源目录
-   - 删除旧页面：`ListView.vue`、`DetailView.vue`、`BoardView.vue`
+| 页面名称 | 路由路径 | 文件位置 |
+|---|---|---|
+| 首页 | / | src/views/HomeView.vue |
+| 二手交易 | /trade | src/views/TradeView.vue |
+| 失物招领 | /lost-found | src/views/LostFoundView.vue |
+| 拼单搭子 | /group-buy | src/views/GroupBuyView.vue |
+| 跑腿委托 | /errand | src/views/ErrandView.vue |
+| 发布信息 | /publish | src/views/PublishView.vue |
+| 消息中心 | /message | src/views/MessageView.vue |
+| 个人中心 | /user | src/views/UserCenterView.vue |
 
-2. **首页改版为网站介绍页**
-   - Hero 区域：平台名称 "校园集市"、标语、功能简介
-    - 四大功能卡片：二手交易、失物招领、拼单搭子、跑腿委托
-   - 蓝白渐变色背景优化
-   - 每个功能卡片可点击跳转至对应的详细介绍页
+## 3. AI 协作记录
 
-3. **四个功能详情页**
-   - `TradeView.vue` — 二手交易使用指南 + 温馨提示
-   - `LostFoundView.vue` — 失物招领使用指南 + 温馨提示
-    - `GroupBuyView.vue` — 拼单搭子使用指南 + 温馨提示
-   - `ErrandView.vue` — 跑腿委托使用指南 + 温馨提示
+本次开发使用了 Opencode（AI CLI 编程助手）辅助完成以下内容：
 
-4. **布局组件封装**
-   - `AppHeader.vue` — 顶部导航栏，包含 Logo、平台名称、标语
-   - `AppNav.vue` — 主导航菜单，8 个入口链接，支持 active 高亮
-   - `AppLayout.vue` — 整体布局容器，组合 Header + Nav + RouterView
+- **AI 生成的部分**：
+  1. 页面组件骨架代码：8 个视图文件的基础结构（`<template>` + `<script setup>` + `<style scoped>`）
+  2. 公共布局组件：AppLayout、AppHeader、AppNav 的完整实现，包含 TypeScript 类型定义和 scoped 样式
+  3. 路由配置文件：在 `src/router/index.ts` 中生成 8 条路由定义，包含 path、name、component 和 meta.title
+  4. 首页改版：Hero 区域 + 功能卡片网格的布局和样式
+  5. 四个功能详情页：TradeView、LostFoundView、GroupBuyView、ErrandView 的使用指南和温馨提示内容
 
-5. **路由系统更新**
-   - 简化路由配置，移除旧路由，更新为新的命名规范
+- **核心提示词**：要求 AI 创建"校园轻集市"PC 端 Vue3 Web App 的 Day2 页面骨架与路由导航，指定技术栈为 Vue3 + Vite + TypeScript + Vue Router + Pinia，要求代码保持简洁、适合教学实训项目继续扩展。
 
----
+- **人工检查与修改**：
+  1. 发现 `TradeView.vue` 中的 action 按钮指向 `/list`，但该项目并未定义该路由路径，属于链接指向错误，已修改为 `/trade`
+  2. 检查发现导航栏和首页中使用的"拼单互助"与路由元信息中的"拼单搭子"不一致，已全部统一为"拼单搭子"
+  3. 确认所有 8 个页面的路由路径与组件名称一一对应，不存在遗漏或错配
+  4. 确认所有导航项均使用 `<router-link>` 而非 `<a>` 标签，确保 SPA 跳转不触发页面刷新
+  5. 确认 `main.ts` 已正确挂载 router 和 Pinia，`App.vue` 正确引入 AppLayout 布局组件
 
-## 路由设计
+## 4. 遇到的问题与解决方法
 
-| 路径 | 名称 | 页面组件 | 加载方式 |
-|------|------|---------|---------|
-| `/` | `home` | `HomeView` | 直接导入 |
-| `/trade` | `trade` | `TradeView.vue` | 直接导入 |
-| `/lost-found` | `lostFound` | `LostFoundView.vue` | 直接导入 |
-| `/group-buy` | `groupBuy` | `GroupBuyView.vue` | 直接导入 |
-| `/errand` | `errand` | `ErrandView.vue` | 直接导入 |
-| `/publish` | `publish` | `PublishView.vue` | 直接导入 |
-| `/message` | `message` | `MessageView.vue` | 直接导入 |
-| `/user` | `user` | `UserCenterView.vue` | 直接导入 |
+**问题 1：AI 生成了不存在的路由链接**。`TradeView.vue` 的"去逛逛二手商品"按钮指向 `/list`，但本项目中仅定义了 8 个基础路由，`/list` 尚未创建。如果用户点击该按钮将跳转到空白页面。解决方法：人工审查每条路由链接，将该按钮的目标路径改为 `/trade`，使其指向本页面的合理目标。
 
----
+**问题 2：导航栏名称与路由元信息不一致**。AI 生成 AppNav 时使用了"拼单互助"作为显示文本，但路由配置中 meta.title 写的是"拼单搭子"，首页的功能卡片也用了"拼单互助"。这会导致用户在导航栏和首页看到不同的功能名称，造成混淆。解决方法：统一将三处（AppNav、HomeView 功能卡片、证据文档）中的"拼单互助"改为"拼单搭子"，与路由元信息保持一致。
 
-## 项目结构
+**问题 3：证据卡数据与实际代码不符**。AI 首次生成的证据卡中路由表存在多处错误，包括路径 `/user-center` 实际代码为 `/user`、路由 name `Trade` 实际为 `trade`、路由加载方式标注为"懒加载"但代码中使用的是直接导入。解决方法：逐项对照实际代码修正路由表和项目结构描述。
 
-```
-campus-market-seed
-├── src
-│   ├── api/
-│   ├── assets/
-│   ├── components
-│   │   ├── AppHeader.vue
-│   │   ├── AppLayout.vue
-│   │   └── AppNav.vue
-│   ├── router
-│   │   └── index.ts
-│   ├── stores/
-│   ├── views
-│   │   ├── HomeView.vue
-│   │   ├── TradeView.vue
-│   │   ├── LostFoundView.vue
-│   │   ├── GroupBuyView.vue
-│   │   ├── ErrandView.vue
-│   │   ├── PublishView.vue
-│   │   ├── MessageView.vue
-│   │   └── UserCenterView.vue
-│   ├── App.vue
-│   └── main.ts
-├── docs
-│   └── evidence
-│       ├── Day1_Evidence.md
-│       └── Day2_Evidence.md
-├── package.json
-└── README.md
-```
+## 5. 今日反思
 
----
-
-## AI 协作记录
-
-- **工具**: Opencode（AI CLI 编程助手）
-- **协作内容**:
-  1. 分析现有项目结构，规划重构方案
-  2. 批量创建/重命名/删除视图文件
-  3. 封装布局组件（AppHeader / AppNav / AppLayout）
-  4. 设计并实现首页介绍页和四个功能详情页
-  5. 更新路由配置，确保所有链接正确
-  6. 优化 UI 样式（蓝白渐变背景、卡片布局、响应式）
-- **验证**: `vue-tsc --build` 编译通过，无类型错误
-- **复审修复**:
-  1. `TradeView.vue` 中 `/list` 链接改为 `/trade`（目标路由不存在）
-  2. 统一"拼单互助"为"拼单搭子"（AppNav + HomeView 同步修改）
-- **结论**: 全部 8 个页面路由正常，导航跳转正确，布局组件分离合理，代码简洁无过度封装
-
----
-
-## 自我评价
-
-- **完成度**: 项目结构重构 + 首页改版 + 功能详情页 + 布局组件全部完成
-- **代码质量**: `vue-tsc --build` 编译通过，无类型错误
-- **一致性**: 严格遵循项目现有代码风格（Composition API、Scoped CSS、TypeScript）
+页面骨架是整个应用的地基，它决定了项目目录组织方式和代码扩展方向。通过今天的工作，我深刻体会到清晰的页面骨架能大幅降低后续开发的认知负担——每个业务模块有固定的文件位置，新增页面时只需在 views 目录下创建新文件并在路由表中注册即可。路由导航则是应用的"交通系统"，它不仅控制 URL 与页面的对应关系，还通过命名路由、路由元信息等机制为后续的权限控制和动态加载预留了扩展点。而公共布局组件将头部、导航、内容容器等跨页面共享的部分统一管理，避免了每个页面重复编写相同结构的模板代码。三者结合形成了一个可维护、可扩展的基础架构：页面骨架提供组织规范，路由导航提供访问控制，公共布局提供视觉一致性，这对后续接入真实业务数据、实现用户交互功能至关重要。
