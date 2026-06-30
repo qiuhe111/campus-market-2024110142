@@ -1,7 +1,7 @@
 {
   "trades": [
     {
-      "id": 1,
+      "id": "1",
       "title": "九成新机械键盘",
       "category": "数码配件",
       "price": 89,
@@ -14,7 +14,7 @@
       "description": "键盘使用正常，因更换设备转让。"
     },
     {
-      "id": 2,
+      "id": "2",
       "title": "高等数学教材",
       "category": "教材资料",
       "price": 18,
@@ -27,7 +27,7 @@
       "description": "教材有少量笔记，不影响使用。"
     },
     {
-      "id": 3,
+      "id": "3",
       "title": "尤克里里入门款",
       "category": "文体用品",
       "price": 120,
@@ -40,7 +40,7 @@
       "description": "买了半年，调音器一并赠送。"
     },
     {
-      "id": 4,
+      "id": "4",
       "title": "小台灯护眼款",
       "category": "生活电器",
       "price": 35,
@@ -53,7 +53,7 @@
       "description": "三档调光，USB 充电。"
     },
     {
-      "id": 5,
+      "id": "5",
       "title": "自行车山地车",
       "category": "交通工具",
       "price": 260,
@@ -64,11 +64,37 @@
       "image": "",
       "status": "open",
       "description": "26 寸变速车，轮胎刚换过。"
+    },
+    {
+      "title": "????",
+      "category": "????",
+      "price": 50,
+      "condition": "???",
+      "location": "????",
+      "publisher": "????",
+      "publishTime": "2026-06-30 12:00",
+      "image": "",
+      "status": "open",
+      "description": "????",
+      "id": "dhRdHapZ_YQ"
+    },
+    {
+      "image": "",
+      "description": "????",
+      "publishTime": "2026-06-30 12:00",
+      "price": 50,
+      "category": "????",
+      "status": "open",
+      "condition": "???",
+      "publisher": "????",
+      "location": "????",
+      "title": "????",
+      "id": "v1lgGKgaKrE"
     }
   ],
   "lostFounds": [
     {
-      "id": 1,
+      "id": "1",
       "title": "寻找黑色校园卡",
       "type": "lost",
       "itemName": "校园卡",
@@ -79,7 +105,7 @@
       "description": "校园卡卡套为黑色，内有学生证。"
     },
     {
-      "id": 2,
+      "id": "2",
       "title": "拾到蓝色雨伞",
       "type": "found",
       "itemName": "雨伞",
@@ -90,7 +116,7 @@
       "description": "雨伞放在 A 区一楼值班室。"
     },
     {
-      "id": 3,
+      "id": "3",
       "title": "寻找银色 U 盘",
       "type": "lost",
       "itemName": "U 盘",
@@ -101,7 +127,7 @@
       "description": "32G 银色闪迪 U 盘，内有重要论文。"
     },
     {
-      "id": 4,
+      "id": "4",
       "title": "拾到白色耳机盒",
       "type": "found",
       "itemName": "耳机盒",
@@ -112,7 +138,7 @@
       "description": "AirPods 白色充电盒，已交到失物招领处。"
     },
     {
-      "id": 5,
+      "id": "5",
       "title": "寻找学生证",
       "type": "lost",
       "itemName": "学生证",
@@ -121,11 +147,33 @@
       "contact": "站内消息联系",
       "status": "open",
       "description": "姓名李华，计算机学院，捡到请联系。"
+    },
+    {
+      "title": "????",
+      "type": "lost",
+      "itemName": "??",
+      "location": "???",
+      "eventTime": "2026-06-30 10:00",
+      "contact": "??????",
+      "status": "open",
+      "description": "??????",
+      "id": "EFiTOxaYTmw"
+    },
+    {
+      "contact": "??????",
+      "title": "????",
+      "location": "???",
+      "type": "lost",
+      "description": "??????",
+      "status": "open",
+      "itemName": "??",
+      "eventTime": "2026-06-30 10:00",
+      "id": "WLj63PH4J3s"
     }
   ],
   "groupBuys": [
     {
-      "id": 1,
+      "id": "1",
       "title": "周五晚火锅拼单",
       "type": "拼餐",
       "targetCount": 6,
@@ -137,7 +185,7 @@
       "description": "AA 制，人数够后统一预约。"
     },
     {
-      "id": 2,
+      "id": "2",
       "title": "四六级资料团购",
       "type": "学习资料",
       "targetCount": 10,
@@ -149,7 +197,7 @@
       "description": "达到人数后统一下单。"
     },
     {
-      "id": 3,
+      "id": "3",
       "title": "奶茶拼单满减",
       "type": "拼餐",
       "targetCount": 4,
@@ -161,7 +209,7 @@
       "description": "满 4 杯享 7 折，口味自选。"
     },
     {
-      "id": 4,
+      "id": "4",
       "title": "拼车去高铁站",
       "type": "出行拼车",
       "targetCount": 4,
@@ -173,7 +221,7 @@
       "description": "周六早上拼车去高铁站，费用均摊。"
     },
     {
-      "id": 5,
+      "id": "5",
       "title": "教材团购《数据结构》",
       "type": "学习资料",
       "targetCount": 15,
@@ -183,11 +231,35 @@
       "publisher": "计算机学院学生",
       "status": "open",
       "description": "第二版教材，团购价 8 折。"
+    },
+    {
+      "title": "??????",
+      "type": "??",
+      "targetCount": 4,
+      "currentCount": 1,
+      "deadline": "2026-07-01 18:00",
+      "location": "??",
+      "publisher": "????",
+      "status": "open",
+      "description": "??????",
+      "id": "l4wzFHWAn-g"
+    },
+    {
+      "currentCount": 1,
+      "type": "??",
+      "status": "open",
+      "description": "??????",
+      "targetCount": 4,
+      "publisher": "????",
+      "deadline": "2026-07-01 18:00",
+      "location": "??",
+      "title": "??????",
+      "id": "4DgEqMzrn0U"
     }
   ],
   "errands": [
     {
-      "id": 1,
+      "id": "1",
       "title": "帮取快递到宿舍楼下",
       "taskType": "取快递",
       "reward": 3,
@@ -199,7 +271,7 @@
       "description": "快递较轻，送到宿舍楼下即可。"
     },
     {
-      "id": 2,
+      "id": "2",
       "title": "帮买一份晚餐",
       "taskType": "代买",
       "reward": 5,
@@ -211,7 +283,7 @@
       "description": "需要在 18:30 前送到。"
     },
     {
-      "id": 3,
+      "id": "3",
       "title": "图书馆占座",
       "taskType": "占座",
       "reward": 4,
@@ -223,7 +295,7 @@
       "description": "早上帮忙占座，带电源位置，预计坐到中午。"
     },
     {
-      "id": 4,
+      "id": "4",
       "title": "帮打印论文并装订",
       "taskType": "代打印",
       "reward": 6,
@@ -235,7 +307,7 @@
       "description": "约 30 页，双面打印，胶装。"
     },
     {
-      "id": 5,
+      "id": "5",
       "title": "代取快递到北区",
       "taskType": "取快递",
       "reward": 4,
@@ -245,6 +317,31 @@
       "publisher": "北区学生",
       "status": "open",
       "description": "快递柜取件码私发，送到楼下即可。"
+    },
+    {
+      "title": "?????",
+      "taskType": "???",
+      "reward": 5,
+      "from": "????",
+      "to": "??5?",
+      "deadline": "2026-07-01 20:00",
+      "publisher": "????",
+      "status": "open",
+      "description": "??????",
+      "id": "6tQ4o3z9THI"
+    },
+    {
+      "taskType": "???",
+      "description": "??????",
+      "status": "open",
+      "publisher": "????",
+      "deadline": "2026-07-01 20:00",
+      "reward": 5,
+      "from": "????",
+      "title": "?????",
+      "to": "??5?",
+      "id": "zQnQDkpxG1k"
     }
-  ]
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
 }
