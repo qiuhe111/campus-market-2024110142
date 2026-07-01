@@ -1,25 +1,65 @@
-<script setup lang="ts">
-</script>
-
 <template>
-  <div class="page">
-    <h1>消息页面</h1>
-    <p class="desc">查看私信、系统通知和互动消息，与同学们保持联系</p>
-  </div>
+  <section class="page">
+    <div class="page-header">
+      <h1>消息中心</h1>
+      <p>查看系统通知、收藏提醒和互动消息。</p>
+    </div>
+
+    <div class="message-list">
+      <article class="message-card">
+        <h3>欢迎使用校园轻集市</h3>
+        <p>你可以在这里发布二手商品、失物招领、拼单搭子和跑腿委托。</p>
+      </article>
+
+      <article class="message-card">
+        <h3>功能提示</h3>
+        <p>收藏的信息可以在个人中心中查看。</p>
+      </article>
+    </div>
+  </section>
 </template>
 
 <style scoped>
 .page {
-  padding: 32px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
-.page h1 {
-  font-size: 24px;
-  color: #333;
-  margin: 0 0 12px;
+
+.page-header {
+  padding: 24px;
+  border-radius: 16px;
+  background: #fff;
 }
-.desc {
-  font-size: 15px;
-  color: #888;
+
+.page-header h1 {
+  margin: 0 0 8px;
+}
+
+.page-header p {
   margin: 0;
+  color: #6b7280;
+}
+
+.message-list {
+  display: grid;
+  gap: 16px;
+}
+
+.message-card {
+  padding: 24px;
+  border-radius: 16px;
+  background: #fff;
+}
+
+.message-card h3 {
+  margin: 0 0 8px;
+  font-size: 16px;
+}
+
+.message-card p {
+  margin: 0;
+  color: #6b7280;
+  line-height: 1.6;
 }
 </style>
